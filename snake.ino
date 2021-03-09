@@ -130,7 +130,7 @@ void setup(){
   randomSeed(analogRead(0));
   set_apple();
 
-  attachInterrupt(0, buttonTick, FALLING);
+  attachInterrupt(0, reset_apple, FALLING);
   
   for (uint8_t i=0; i<lenght; i++) {
     x_location[i] = 42 - i;
@@ -155,7 +155,7 @@ void setup(){
   game_over();
 }
 
-void buttonTick() {
+void reset_apple() {
   static unsigned long last_interrupt_time = 0;
   unsigned long interrupt_time = millis();
   // If interrupts come faster than 200ms, assume it's a bounce and ignore
