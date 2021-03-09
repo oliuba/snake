@@ -3,6 +3,8 @@
 #include <Adafruit_PCD8544.h>
 #include <AlignedJoy.h>
 
+constexpr int 
+
 Adafruit_PCD8544 display = Adafruit_PCD8544(7, 6, 5, 4, 3);
 #define PIN_JOY1_X   2  //(up  down)
 #define PIN_JOY1_Y   1  //(left  right)
@@ -158,8 +160,8 @@ void setup(){
 void reset_apple() {
   static unsigned long last_interrupt_time = 0;
   unsigned long interrupt_time = millis();
-  // If interrupts come faster than 200ms, assume it's a bounce and ignore
-  if (interrupt_time - last_interrupt_time > 200)
+  // If interrupts come faster than 50ms, assume it's a bounce and ignore
+  if (interrupt_time - last_interrupt_time > 50)
   {
      display.drawPixel(apple_x, apple_y, WHITE);
      set_apple();
