@@ -3,7 +3,6 @@
 #include <Adafruit_PCD8544.h>
 #include <AlignedJoy.h>
 
-constexpr int 
 
 Adafruit_PCD8544 display = Adafruit_PCD8544(7, 6, 5, 4, 3);
 #define PIN_JOY1_X   2  //(up  down)
